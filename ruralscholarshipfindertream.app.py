@@ -120,5 +120,5 @@ else:
     st.write(f"## Results for {name}")
     st.write("You may qualify for:")
     for scholarship in scholarships:
-        st.write(""###" + scholarship["name"])
+        st.write("###" + scholarship["name"])
         st.write(scholarship["details"])
