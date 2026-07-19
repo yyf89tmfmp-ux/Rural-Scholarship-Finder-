@@ -2,9 +2,11 @@ import streamlit as st
 # Title
 st.title("Rural Scholarship Finder")
 st.write("Welcome to Rural Scholarship Finder!")
-st.write("This app helps rural students find scholarships they may qualify for.")
+st.write("Helping Rural Students Discover Scholarship Opportunities Based On Academics, Location, and Eligibility.")
 st.write("")
 # User Input
+with st.sidebar:
+    st.header("Student Information")
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
 gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
@@ -120,5 +122,6 @@ else:
     st.write(f"## Results for {name}")
     st.write("You may qualify for:")
     for scholarship in scholarships:
+        with st.container():
         st.subheader(scholarship["name"])
         st.write(scholarship["details"])
