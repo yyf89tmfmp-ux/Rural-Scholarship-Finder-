@@ -122,6 +122,6 @@ else:
     st.write(f"## Results for {name}")
     st.write("You may qualify for:")
     for scholarship in scholarships:
-        with st.container():
-        st.subheader(scholarship["name"])
-        st.write(scholarship["details"])
+        with st.container(): 
+            st.subheader(scholarship["name"])
+            st.write(scholarship["details"])
