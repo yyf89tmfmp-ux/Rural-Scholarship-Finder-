@@ -1,13 +1,15 @@
-print("===================================")
-print ("Welcome to Rural Scholarship Finder!")
-print("===================================\n") 
-print("This app helps rural students find scholarships they may qualify for.\n")
+import streamlit as st
+# Title
+st.title("Rural Scholarship Finder")
+st.write("Welcome to Rural Scholarship Finder!")
+st.write("This app helps rural students find scholarships they may qualify for.")
+st.write("")
 # User Input
-name = input("What is your name?")
-state = input("What state do you live in?").strip().lower()
-gpa = float(input("What is your GPA?"))
-act_input = input("What is your ACT score? (Press enter if you have not taken it)")
-income_input = input("What is your annual household income? (Numbers only, skip if unknown): $")
+name = st.text_input("What is your name?")
+state = st.text_input("What state do you live in?").strip().lower()
+gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
+act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)")
+income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $")
 if income_input == "":
     income = None
 else:
@@ -16,11 +18,14 @@ if act_input == "":
     act = 0
 else:
     act = int(act_input)
-rural = input("Do you live in a rural area?")
-print("\nSearching for scholarships... \n")
+rural = st.selectbox("Do you live in a rural area?", ["Yes", "No"]) 
+# Button
+if st.button ("Find Scholarships!"):
+    scholarships = []
+    st.write ("### Searching for scholarships...")
 scholarships = []
 # Rural Scholarships
-if rural.lower() == "yes" and act >= 21 and gpa >= 3.0: 
+if rural == "Yes" and act >= 21 and gpa >= 3.0: 
       scholarships.append({
           "name": "USDA 1890 National Scholars Program",
           "details": "GPA 3.0+ | ACT 21+ | Agriculture, food, natural resources, or related majors | Rural/underserved students | Leadership and service required"}) 
@@ -107,19 +112,13 @@ if state.lower in {"mississippi","ms"}:
         scholarships.append({
             "name" : "Higher Education Legislative Plan (HELP) Grant",
             "details": "Minimum 2.5 GPA | Minimum 20 ACT | Parents' Adjusted Gross Income must be 39500 or less| Must complete the 15.5 unit HELP Core Curriculum in high school"})
-
- 
-
 # Results
-print("--------------------------------")
-print(f"Results for {name}")
-print("--------------------------------")
+st.divider()
 if len(scholarships) == 0:
-      print("Sorry, no scholarships were found.")
+    st.write ("Sorry, no scholarships were found.")
 else:
-    print("You may qualify for:\n")
+    st.write(f"## Results for {name}")
+    st.write("You may qualify for:")
     for scholarship in scholarships:
-        print("-" + scholarship ["name"])
-        print(" " + scholarship["details"])
-        print()
-print("\nGood luck with your college journey!") 
+        st.write(""###" + scholarship["name"])
+        st.write(scholarship["details"])
