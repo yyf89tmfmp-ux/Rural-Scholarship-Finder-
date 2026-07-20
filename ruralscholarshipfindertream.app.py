@@ -14,7 +14,7 @@ with st.sidebar:
     st.header ("About Me!")
     st.write(""" 
     Hello! My name is Hunter Baugh and I am a high school students from rural Tennessee. I know firsthand how overwhelming it can be to find college resources, and so I decided to make this app in order to help students like me have an easier time than I did.""")
-    st.image("me.jpg", width=250)
+    st.image("me.jpeg", width=250)
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
 gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
