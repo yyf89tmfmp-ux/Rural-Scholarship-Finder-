@@ -19,6 +19,7 @@ with st.sidebar:
     [data-testid="stImage"] img{border-radius: 20px; box-shadow:0 6px 18px rgba(0,0,0,0.2)}
     </style>
     """, unsafe_allow_html=True)
+    st.image("me1.jpeg", width=250)
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
 gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
