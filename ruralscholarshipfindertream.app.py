@@ -13,7 +13,7 @@ with st.sidebar:
     st.divider()
     st.header ("About Me!")
     st.write(""" 
-    Hello! My name is Hunter Baugh and I am a high school students from rural Tennessee. 
+    Hello! My name is Hunter Baugh and I am a high school students from rural Tennessee.""") 
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
 gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
