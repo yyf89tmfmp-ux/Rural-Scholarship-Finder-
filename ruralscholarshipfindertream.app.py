@@ -6,7 +6,14 @@ st.write("Helping Rural Students Discover Scholarship Opportunities Based On Aca
 st.write("")
 # User Input
 with st.sidebar:
-    st.header("Student Information")
+    st.header("About This App")
+    st.write(""" The Rural Scholarship Finder was created to help southern students from rural communities discover scholarship opportunities that are often difficult to find in one place.
+
+    Many students attend schools with limited college counseling resources. This app makes searching for scholarships easier by allowing users to filter opportunities based on certain criteria.""")
+    st.divider()
+    st.header ("About Me!")
+    st.write(""" 
+    Hello! My name is Hunter Baugh and I am a high school students from rural Tennessee. 
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
 gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
