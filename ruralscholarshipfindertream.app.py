@@ -23,10 +23,14 @@ with st.sidebar:
 name = st.text_input("What is your name?", placeholder="Enter Name Here...")
 if name is "":
     st.info("Please Enter Your Name.")
+    st.stop()
 state = st.text_input("What state do you live in?", placeholder="Enter State Here...").strip().lower()
+if state is "":
+    st.info("Please Enter The State In Which You Reside.")
+    st.stop()
 gpa = st.number_input("What is your GPA?", value=None, placeholder="Enter Your GPA...")
 if gpa is None:
-    st.info("Please Enter Your GPA Above To View Scholarships")
+    st.info("Please Enter Your GPA.")
     st.stop()
 act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)", placeholder="Enter ACT Score Here...")
 income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $", placeholder="Enter Annual Household Income...")
