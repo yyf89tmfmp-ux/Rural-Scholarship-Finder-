@@ -20,11 +20,11 @@ with st.sidebar:
     </style>
     """, unsafe_allow_html=True)
     st.image("me1.jpeg", width=250)
-name = st.text_input("What is your name?")
-state = st.text_input("What state do you live in?").strip().lower()
+name = st.text_input("What is your name?", placeholder="Enter Name Here...")
+state = st.text_input("What state do you live in?", placeholder="Enter State Here...").strip().lower()
 gpa = st.number_input("What is your GPA?", value=None, placeholder="Enter Your GPA...")
-act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)")
-income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $")
+act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)", placeholder="Enter ACT Score Here...")
+income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $", placeholder="Enter Annual Household Income...")
 if income_input == "":
     income = None
 else:
