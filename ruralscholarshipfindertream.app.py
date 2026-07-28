@@ -13,7 +13,7 @@ with st.sidebar:
     st.divider()
     st.header ("About Me!")
     st.write(""" 
-    Hello! My name is Hunter Baugh and I am a high school students from rural Tennessee. I know firsthand how overwhelming it can be to find college resources, and so I decided to make this app in order to help students like me have an easier time than I did.""")
+    Hello! My name is Hunter Baugh and I am a high school student from rural Tennessee. I know firsthand how overwhelming it can be to find college resources, and so I decided to make this app in order to help students like me have an easier time than I did.""")
     st.markdown("""
     <style>
     [data-testid="stImage"] img{border-radius: 20px; box-shadow:0 6px 18px rgba(0,0,0,0.2)}
@@ -22,7 +22,7 @@ with st.sidebar:
     st.image("me1.jpeg", width=250)
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
-gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0) 
+gpa = st.number_input("What is your GPA?") 
 act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)")
 income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $")
 if income_input == "":
