@@ -22,7 +22,7 @@ with st.sidebar:
     st.image("me1.jpeg", width=250)
 name = st.text_input("What is your name?")
 state = st.text_input("What state do you live in?").strip().lower()
-gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0, step=0.1) 
+gpa = st.number_input("What is your GPA?", min_value=0.0, max_value=5.0) 
 act_input = st.text_input ("What is your ACT score? (Leave blank if you have not taken it)")
 income_input = st.text_input("What is your annual household income? (Numbers only, skip if unknown): $")
 if income_input == "":
