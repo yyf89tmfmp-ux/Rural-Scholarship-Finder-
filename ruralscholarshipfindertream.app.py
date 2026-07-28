@@ -21,6 +21,8 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     st.image("me1.jpeg", width=250)
 name = st.text_input("What is your name?", placeholder="Enter Name Here...")
+if name is "":
+    st.info("Please Enter Your Name.")
 state = st.text_input("What state do you live in?", placeholder="Enter State Here...").strip().lower()
 gpa = st.number_input("What is your GPA?", value=None, placeholder="Enter Your GPA...")
 if gpa is None:
